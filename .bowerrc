@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "postinstall": "wiredep -s index.html",
+    "postunistall" : "wiredep -s index.html"
+  }
+}

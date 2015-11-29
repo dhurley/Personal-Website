@@ -1,0 +1,19 @@
+{
+  "name": "personal_website",
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "grunt": "~0.4.5",
+    "angular-material": "~0.11.4"
+  }
+}
