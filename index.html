@@ -1,19 +1,168 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="PersonalWebsiteApp">
+<html lang="en" ng-app="personalWebsiteApp">
 <head>
   <meta charset="UTF-8">
   <title>Donal Hurley</title>
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
   <!-- endbower -->
+  <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
+
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h3>
+        <span>Donal Hurley</span>
+      </h3>
+    </div>
+  </md-toolbar>
+
+  <div ng-controller="appController" class="md-padding" ng-cloak>
+    <h2 class="md-title">Apps</h2>
+
+    <div layout="column">
+      <md-card ng-repeat="app in apps">
+        <md-card-header>
+          <md-card-avatar>
+            <img ng-src="{{app.icon}}"/>
+          </md-card-avatar>
+          <md-card-header-text>
+            <span class="md-title">{{app.name}}</span>
+          </md-card-header-text>
+        </md-card-header> 
+        <md-card-content>
+          <p>Description: {{app.description}}</p>
+        </md-card-content>
+      </md-card>
+    </div>
+  </div>
+
+<div ng-cloak>
+  <md-content class="md-padding" layout="row" layout-wrap layout-align="center start">
+    <div flex="50" layout="column">
+      <md-card>
+        <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Action buttons</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+          <p>
+            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+          </p>
+          <p>
+            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+          </p>
+          <p>
+            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+          </p>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button>Action 1</md-button>
+          <md-button>Action 2</md-button>
+        </md-card-actions>
+      </md-card>
+      <md-card>
+        <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Vertical action buttons</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+          <p>
+            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+          </p>
+        </md-card-content>
+        <md-card-actions layout="column" layout-align="start">
+          <md-button>Action 1</md-button>
+          <md-button>Action 2</md-button>
+        </md-card-actions>
+      </md-card>
+    </div>
+    <div flex="50" layout="column">
+      <md-card>
+        <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Icon action buttons</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+          <p>
+            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+          </p>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button class="md-icon-button" aria-label="Favorite">
+            <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Settings">
+            <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Share">
+            <md-icon md-svg-icon="img/icons/share-arrow.svg"></md-icon>
+          </md-button>
+        </md-card-actions>
+      </md-card>
+      <md-card>
+        <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button class="md-icon-button" aria-label="Favorite">
+            <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Settings">
+            <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Share">
+            <md-icon md-svg-icon="img/icons/share-arrow.svg"></md-icon>
+          </md-button>
+        </md-card-actions>
+      </md-card>
+      <md-card>
+        <md-card-header>
+          <md-card-avatar>
+            <img src="img/logo.svg"/>
+          </md-card-avatar>
+          <md-card-header-text>
+            <span class="md-title">Angular</span>
+            <span class="md-subhead">Material</span>
+          </md-card-header-text>
+        </md-card-header>
+        <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Card header</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+          <p>
+            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+          </p>
+        </md-card-content>
+      </md-card>
+    </div>
+  </md-content>
+</div>
+
+    
   <!-- bower:js -->
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="bower_components/angular-aria/angular-aria.js"></script>
   <script src="bower_components/angular-material/angular-material.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
   <!-- endbower -->
   <script src="js/main.js"></script>
+  <script src="js/services/googlePlayStore.js"></script>
+  <script src="js/controllers/appController.js"></script>
 </body>
 </html>
