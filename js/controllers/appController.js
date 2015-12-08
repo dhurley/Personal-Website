@@ -1,4 +1,4 @@
-var appController = function($scope, googlePlayStore) {
+var appController = function($scope, $mdDialog, googlePlayStore) {
 	var packageNames = ['net.djhurley.strandedinspace.android', 'net.djhurley.mindthegap.android'];
 	$scope.apps = [];
 
@@ -13,6 +13,18 @@ var appController = function($scope, googlePlayStore) {
 							);
 	};
 
+	$scope.showAlert = function(app, ev) {
+    $mdDialog.show(
+      		$mdDialog.alert()
+        	.parent(angular.element(document.querySelector('#popupContainer')))
+        	.clickOutsideToClose(true)
+        	.title(app.name)
+        	.textContent(app.description)
+        	.ariaLabel(app.name)
+        	.ok('ok!')
+        	.targetEvent(ev)
+    	);
+	};
 };
 
 app.controller('appController', appController);
