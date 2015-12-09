@@ -1,4 +1,8 @@
-.face {
+.banner {
+	width: 100%;
+}
+
+.app-icon {
 	border-radius: 30px;
 	border: 1px solid #ddd;
 	width: 48px;

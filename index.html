@@ -14,14 +14,15 @@
   <md-content id="popupContainer">
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h3>
-          <span>Donal Hurley</span>
-        </h3>
       </div>
     </md-toolbar>
 
+    <md-content>
+      <img ng-src="images/code-banner.png" class="banner">
+    </md-content>
+
     <md-content ng-controller="appController" class="md-padding" ng-cloak>
-      <md-toolbar class="md-warn">
+      <md-toolbar>
         <h2 class="md-toolbar-tools">
           <span>Android Applications</span>
         </h2>
@@ -30,7 +31,7 @@
       <md-content>
         <md-list>
           <md-list-item class="md-3-line" ng-repeat="app in apps" ng-click="showAlert(app)">
-            <img ng-src="{{app.icon}}" class="face">
+            <img ng-src="{{app.icon}}" class="app-icon">
             <div class="md-list-item-text">
               <h3>{{app.name}}</h3>
               <p>Downloads: {{app.numDownloads}}</p>
@@ -42,6 +43,7 @@
       </md-content>
     </md-content>
   </md-content>
+
   <!-- bower:js -->
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>
