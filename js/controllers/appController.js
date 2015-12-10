@@ -8,7 +8,7 @@ var appController = function($scope, $mdDialog, googlePlayStore) {
 					 				$scope.apps.push(data); 
 					 			},
 					 		  function(reason) {
-							     	console.log("Error occured fetching app data.");
+							     	console.log("Error occured fetching app data: " + reason);
 							   	}
 							);
 	};
