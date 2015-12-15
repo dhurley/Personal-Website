@@ -28,11 +28,10 @@
 
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <md-button flex="20">About</md-button>
-        <md-button flex="20">Career History</md-button>
-        <md-button flex="20">GitHub Projects</md-button>
-        <md-button flex="20">Android Applications</md-button>
-        <md-button flex="20">Contact</md-button>
+        <md-button flex="25">About</md-button>
+        <md-button flex="25">Career History</md-button>
+        <md-button flex="25">GitHub Projects</md-button>
+        <md-button flex="25">Android Applications</md-button>
       </div>
     </md-toolbar>
 
@@ -51,9 +50,23 @@
           </md-toolbar>
 
           <md-content layout="row" layout-align="center">
-            <p flex="80" layout-align="center center">
-              My name is Donal Hurley and I am an experienced software engineer who is always looking to expand his technical knowledge. I am a Java developer by trade but I also have experience with Javascript, Python and Bash. I am always looking to try and learn the latest technologies used in the software industry from using the Unity Game Engine to develop android applications to using AngularJS and Angular Material to create responsive web applications.
-            </p>
+            <md-content flex="10"></md-content>
+            <md-content flex="25" layout="row" layout-wrap>
+              <md-content flex="20"></md-content>
+              <img ng-src="images/person.png" class="profile-icon" flex="60">
+              <md-content flex="20"></md-content>
+              <md-content flex="10"></md-content>
+              <md-button class="md-primary" ng-href="https://github.com/dhurley" target="_blank" flex="30">GitHub</md-button>
+              <md-button class="md-primary" ng-href="https://ie.linkedin.com/in/donal-hurley-0b42a1b3" target="_blank" flex="30">Linkedin</md-button>
+            </md-content>
+            <md-content flex="55">
+              <h4>Name: <i>Donal Hurley</i></h4><h4>Email: <i>djhurley1990@gmail.com</i></h4>
+              <md-divider></md-divider>
+              <p>
+                I am an experienced software engineer who is always looking to expand his technical knowledge. I am a Java developer by trade but I also have experience with Javascript, Python and Bash. I am always looking to try and learn the latest technologies used in the software industry from using the Unity Game Engine to develop android applications to using AngularJS and Angular Material to create responsive web applications.
+              </p>
+          </md-content>
+            <md-content flex="10"></md-content>
           </md-content>
         </md-content>
 
@@ -112,23 +125,6 @@
             </md-list>
           </md-content>
         </md-content>
-
-        <!---------------Contact Content------------------>
-
-        <md-content class="md-padding" ng-cloak>
-          <md-toolbar>
-            <h2 class="md-toolbar-tools" layout-align="center">
-              <span>Contact</span>
-            </h2>
-          </md-toolbar>
-
-          <md-content>
-            
-          </md-content>
-        </md-content>
-
-      </md-content>
-    </md-content>
 
   </md-content>
 
