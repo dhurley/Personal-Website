@@ -72,20 +72,21 @@
 
         <!---------------History Content-------------------->
 
-        <md-content class="md-padding" ng-cloak>
+        <md-content ng-controller="historyController" class="md-padding" ng-cloak>
           <md-toolbar>
             <h2 class="md-toolbar-tools" layout-align="center">
               <span>History</span>
             </h2>
           </md-toolbar>
 
-          <md-content layout="row" layout-align="center">
-            <md-subheader class="md-primary" layout-align="center center"><b>Software Engineer - Ericsson</b> (June 2013 - present)</md-subheader>
-          </md-content>
-          <md-content layout="row" layout-align="center">
-            <p flex="80" layout-align="center center">
-              I am currently working in an agile team developing a product that provides customers with a web-based user interface that they can use to monitor their mobile networks and to monitor the quality of service they are providing to their network subscribers.
-            </p>
+          <md-content ng-repeat="stage in stages">
+            <md-content layout="row" layout-align="center">
+              <md-subheader class="md-primary" layout-align="center center">{{stage.name}}</md-subheader>
+            </md-content>
+            <md-content layout="row" layout-align="center">
+              <p flex="80" layout-align="center center">{{stage.description}}</p>
+            </md-content>
+            <md-divider md-inset flex="85"></md-divider>
           </md-content>
         </md-content>
 
@@ -147,6 +148,7 @@
   <script src="js/main.js"></script>
   <script src="js/services/github.js"></script>
   <script src="js/services/googlePlayStore.js"></script>
+  <script src="js/controllers/historyController.js"></script>
   <script src="js/controllers/repoController.js"></script>
   <script src="js/controllers/appController.js"></script>
 </body>
