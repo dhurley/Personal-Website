@@ -29,7 +29,7 @@
     <md-toolbar>
       <div class="md-toolbar-tools">
         <md-button flex="25">About</md-button>
-        <md-button flex="25">Career History</md-button>
+        <md-button flex="25">History</md-button>
         <md-button flex="25">GitHub Projects</md-button>
         <md-button flex="25">Android Applications</md-button>
       </div>
@@ -70,12 +70,12 @@
           </md-content>
         </md-content>
 
-        <!---------------Career History Content-------------------->
+        <!---------------History Content-------------------->
 
         <md-content class="md-padding" ng-cloak>
           <md-toolbar>
             <h2 class="md-toolbar-tools" layout-align="center">
-              <span>Career History</span>
+              <span>History</span>
             </h2>
           </md-toolbar>
 
@@ -91,7 +91,7 @@
 
         <!---------------GitHub Projects Content------------------>
 
-        <md-content class="md-padding" ng-cloak>
+        <md-content ng-controller="repoController" class="md-padding" ng-cloak>
           <md-toolbar>
             <h2 class="md-toolbar-tools" layout-align="center">
               <span>GitHub Projects</span>
@@ -99,7 +99,16 @@
           </md-toolbar>
 
           <md-content>
-            
+            <md-list layout="row" layout-wrap>
+              <md-list-item class="md-3-line" ng-repeat="repo in repos" ng-click="openGithubRepoTab(repo.html_url)" flex="50">
+                <img ng-src="images/github_icon.png" class="app-icon"> 
+                <div class="md-list-item-text">
+                  <h3>{{repo.name}}</h3>
+                  <p>Watchers: {{repo.watchers}}</p>
+                  <p>Number of Open Issuses: {{repo.open_issues}}</p>
+                </div>
+              </md-list-item>
+            </md-list>
           </md-content>
         </md-content>
 
@@ -113,7 +122,7 @@
           </md-toolbar>
 
           <md-content>
-            <md-list layout="row">
+            <md-list layout="row" layout-wrap>
               <md-list-item class="md-3-line" ng-repeat="app in apps" ng-click="showAlert(app)" flex="50">
                 <img ng-src="{{app.icon}}" class="app-icon">
                 <div class="md-list-item-text">
@@ -136,7 +145,9 @@
   <script src="bower_components/angular-route/angular-route.js"></script>
   <!-- endbower -->
   <script src="js/main.js"></script>
+  <script src="js/services/github.js"></script>
   <script src="js/services/googlePlayStore.js"></script>
+  <script src="js/controllers/repoController.js"></script>
   <script src="js/controllers/appController.js"></script>
 </body>
 </html>
