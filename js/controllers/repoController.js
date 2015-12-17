@@ -1,10 +1,7 @@
 var repoController = function($scope, $window, github) {
 	github.getRepos('dhurley')
 			.then(function(data) {
-						$scope.repos = data; 
-						for (var i = 0; i < $scope.repos.length; i++) {
-							$scope.repos[i].created_at = $scope.repos[i].created_at.substr(0, 10);
-						}
+						$scope.repos = data;
 					},
 				function(reason) {
 						console.log("Error occured fetching repo data: " + reason);

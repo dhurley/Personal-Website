@@ -106,7 +106,7 @@
                 <div class="md-list-item-text">
                   <h3>{{repo.name}}</h3>
                   <p>Watchers: {{repo.watchers}}</p>
-                  <p>Number of Open Issuses: {{repo.open_issues}}</p>
+                  <p>Language: {{repo.language}}</p>
                 </div>
               </md-list-item>
             </md-list>
@@ -124,7 +124,7 @@
 
           <md-content>
             <md-list layout="row" layout-wrap>
-              <md-list-item class="md-3-line" ng-repeat="app in apps" ng-click="showAlert(app)" flex="50">
+              <md-list-item class="md-3-line" ng-repeat="app in apps" ng-click="openGooglePlayStoreTab(app.viewUrl)" flex="50">
                 <img ng-src="{{app.icon}}" class="app-icon">
                 <div class="md-list-item-text">
                   <h3>{{app.name}}</h3>
@@ -142,6 +142,7 @@
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.js"></script>
   <script src="bower_components/angular-material/angular-material.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <!-- endbower -->
