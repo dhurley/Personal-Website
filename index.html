@@ -14,7 +14,7 @@
 <body>
   <md-content id="container" ng-controller="contentController" md-swipe-right="openSidnav()" md-swipe-left="closeSidnav()">
 
-    <!--------------Top toolbar and image banner---------------->
+<!---------------------------------------------------Top toolbar and image banner-------------------------------------------------------------->
 
     <md-toolbar>
       <div class="md-toolbar-tools">
@@ -25,9 +25,9 @@
       <img ng-src="images/code-banner.png" class="banner">
     </md-content>
 
-    <!------------------Contents toolbar------------------------>
+<!-------------------------------------------------------Contents toolbar---------------------------------------------------------------------->
 
-    <md-toolbar  hide-xs>
+    <md-toolbar hide-xs>
       <div class="md-toolbar-tools" layout="row" layout-align-gt-xs="center center">
         <div flex="25" layout="column" layout-align="center center"><md-button ng-click="goToContent('about-content')">About</md-button></div>
         <div flex="25" layout="column" layout-align="center center"><md-button ng-click="goToContent('history-content')">History</md-button></div>
@@ -36,7 +36,9 @@
       </div>
     </md-toolbar>
 
-    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" hide-gt-xs>
+<!--------------------------------------------------------Contents sidenav---------------------------------------------------------------------->
+
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-closed="$mdMedia('gt-xs')">
       <md-toolbar class="md-theme-indigo">
         <h1 class="md-toolbar-tools">Contents</h1>
       </md-toolbar>
@@ -48,12 +50,12 @@
       </md-content>
     </md-sidenav>
 
-    <!-----------------------Contents---------------------------->
+<!-------------------------------------------------------------Contents-------------------------------------------------------------------------->
 
     <md-content layout="row" layout-align="center center">
       <md-content flex-gt-xs="80" flex="100">
 
-        <!--------------------About Content------------------------>
+<!----------------------------------------------------------About Content------------------------------------------------------------------------>
 
         <md-content id="about-content" class="md-padding" ng-cloak>
           <md-toolbar>
@@ -62,16 +64,27 @@
             </h2>
           </md-toolbar>
 
-          <md-content layout="row">
-            <md-content flex-offset="10" flex="25" layout="row" layout-align="center center" layout-wrap>
-              <img ng-src="images/person.png" class="profile-icon">
+          <md-content layout="column" layout-align="center center">
+            <md-content flex-offset="10" layout="row" layout-align="center center" layout-wrap>
+              <md-content flex="15" flex-xs="20">
+                <img ng-src="images/person.png" class="profile-icon">
+              </md-content>
+              <md-content flex="25" flex-lg="30" flex-md="35" flex-sm="60" flex-xs="80">
+                <p>Name: <i>Donal Hurley</i></p> 
+                <p>Email: <i>djhurley1990@gmail.com</i></p>
+              </md-content>
+              <md-content hide-xs layout="column" flex="15" flex-sm="25">
+                <md-button class="md-primary" ng-href="https://github.com/dhurley" target="_blank">GitHub</md-button>
+                <md-button class="md-primary" ng-href="https://ie.linkedin.com/in/donal-hurley-0b42a1b3" target="_blank">Linkedin</md-button>
+              </md-content>
+            </md-content>
+            <md-content hide-gt-xs flex-offset="25" flex="80">
               <md-button class="md-primary" ng-href="https://github.com/dhurley" target="_blank">GitHub</md-button>
               <md-button class="md-primary" ng-href="https://ie.linkedin.com/in/donal-hurley-0b42a1b3" target="_blank">Linkedin</md-button>
             </md-content>
-            <md-content flex=" 55">
-              <h4>Name: <i>Donal Hurley</i></h4><h4>Email: <i>djhurley1990@gmail.com</i></h4>
-              <md-divider></md-divider>
-              <p>
+            <md-content >
+              <md-divider flex-offset="10" flex="80"></md-divider>
+              <p flex-offset="10" flex="80">
                 I am an experienced software engineer who is always looking to expand his technical knowledge. I am a Java developer by trade but I also have experience with Javascript, Python and Bash. I am always looking to try and learn the latest technologies used in the software industry from using the Unity 3D Game Engine to develop android applications to using AngularJS and Angular Material to create responsive web applications.
               </p>
             </md-content>
@@ -81,7 +94,7 @@
           </md-content>
         </md-content>
 
-        <!---------------History Content-------------------->
+<!--------------------------------------------------------History Content---------------------------------------------------------------------->
 
         <md-content id="history-content" ng-controller="historyController" class="md-padding" ng-cloak>
           <md-toolbar>
@@ -104,7 +117,7 @@
           </md-content>
         </md-content>
 
-        <!---------------GitHub Projects Content------------------>
+<!-----------------------------------------------------GitHub Projects Content------------------------------------------------------------------>
 
         <md-content id="github-projects-content" ng-controller="repoController" class="md-padding" ng-cloak>
           <md-toolbar>
@@ -130,7 +143,7 @@
           </md-content>
         </md-content>
 
-        <!------------Android Applications Content-------------->
+<!-------------------------------------------------Android Applications Content---------------------------------------------------------------->
 
         <md-content id="android-applications-content" ng-controller="appController" class="md-padding" ng-cloak>
           <md-toolbar>
@@ -158,6 +171,8 @@
 
   </md-content>
 
+<!-------------------------------------------------------Javascript Files-------------------------------------------------------------------->
+   
   <!-- bower:js -->
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>

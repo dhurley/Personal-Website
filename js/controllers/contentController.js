@@ -10,11 +10,11 @@ var contentController = function($scope, smoothScroll, $timeout, $mdSidenav) {
 	}; 
 
 	$scope.closeSidnav = function () {
-      $mdSidenav('left').close();
+      	$mdSidenav('left').close();
     };
 
     $scope.openSidnav = function () {
-      $mdSidenav('left').open();
+      	$mdSidenav('left').open();
     }
 };
 
