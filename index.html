@@ -2,6 +2,7 @@
 <html lang="en" ng-app="personalWebsiteApp">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui"/>
   <link rel="shortcut icon" href="images/person.png" type="image/png">
   <title>Donal Hurley</title>
   <!-- bower:css -->
@@ -11,7 +12,7 @@
 </head>
 
 <body>
-  <md-content id="container" ng-controller="contentController">
+  <md-content id="container" ng-controller="contentController" md-swipe-right="openSidnav()" md-swipe-left="closeSidnav()">
 
     <!--------------Top toolbar and image banner---------------->
 
@@ -26,8 +27,8 @@
 
     <!------------------Contents toolbar------------------------>
 
-    <md-toolbar>
-      <div class="md-toolbar-tools" layout="row" layout-align="center center">
+    <md-toolbar  hide-xs>
+      <div class="md-toolbar-tools" layout="row" layout-align-gt-xs="center center">
         <div flex="25" layout="column" layout-align="center center"><md-button ng-click="goToContent('about-content')">About</md-button></div>
         <div flex="25" layout="column" layout-align="center center"><md-button ng-click="goToContent('history-content')">History</md-button></div>
         <div flex="25" layout="column" layout-align="center center"><md-button ng-click="goToContent('github-projects-content')">GitHub Projects</md-button></div>
@@ -35,10 +36,22 @@
       </div>
     </md-toolbar>
 
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" hide-gt-xs>
+      <md-toolbar class="md-theme-indigo">
+        <h1 class="md-toolbar-tools">Contents</h1>
+      </md-toolbar>
+      <md-content layout="column" layout-padding>
+        <md-button ng-click="goToContentAndCloseSidnav('about-content')">About</md-button>
+        <md-button ng-click="goToContentAndCloseSidnav('history-content')">History</md-button>
+        <md-button ng-click="goToContentAndCloseSidnav('github-projects-content')">GitHub Projects</md-button>
+        <md-button ng-click="goToContentAndCloseSidnav('android-applications-content')">Android Applications</md-button>
+      </md-content>
+    </md-sidenav>
+
     <!-----------------------Contents---------------------------->
 
     <md-content layout="row" layout-align="center center">
-      <md-content flex-gt-md="80" flex="100">
+      <md-content flex-gt-xs="80" flex="100">
 
         <!--------------------About Content------------------------>
 
@@ -55,7 +68,7 @@
               <md-button class="md-primary" ng-href="https://github.com/dhurley" target="_blank">GitHub</md-button>
               <md-button class="md-primary" ng-href="https://ie.linkedin.com/in/donal-hurley-0b42a1b3" target="_blank">Linkedin</md-button>
             </md-content>
-            <md-content flex="55">
+            <md-content flex=" 55">
               <h4>Name: <i>Donal Hurley</i></h4><h4>Email: <i>djhurley1990@gmail.com</i></h4>
               <md-divider></md-divider>
               <p>
@@ -63,8 +76,8 @@
               </p>
             </md-content>
           </md-content>
-          <md-content layout="row" layout-align="center">
-            <md-content flex-offset="20" flex="30"><md-button class="md-primary md-mini" ng-click="goToContent('container')">Back to top</md-button></md-content>
+          <md-content layout="row" layout-align="center center">
+            <md-button class="md-primary md-mini" ng-click="goToContent('container')">Back to top</md-button>
           </md-content>
         </md-content>
 
@@ -86,8 +99,8 @@
             </md-content>
             <md-divider md-inset ng-if="!$last" flex="85"></md-divider>
           </md-content>
-          <md-content layout="row" layout-align="center">
-            <md-content flex-offset="20" flex="30"><md-button class="md-primary md-mini" ng-click="goToContent('container')">Back to top</md-button></md-content>
+          <md-content layout="row" layout-align="center center">
+            <md-button class="md-primary md-mini" ng-click="goToContent('container')">Back to top</md-button>
           </md-content>
         </md-content>
 
@@ -101,8 +114,8 @@
           </md-toolbar>
 
           <md-content>
-            <md-list layout="row" layout-wrap>
-              <md-list-item class="md-3-line" ng-repeat="repo in repos" ng-click="openGithubRepoTab(repo.html_url)" flex="50">
+            <md-list layout="row" layout-xs="column" layout-wrap>
+              <md-list-item class="md-3-line" ng-repeat="repo in repos" ng-click="openGithubRepoTab(repo.html_url)">
                 <img ng-src="images/github_icon.png" class="app-icon"> 
                 <div class="md-list-item-text">
                   <h3>{{repo.name}}</h3>
@@ -112,8 +125,8 @@
               </md-list-item>
             </md-list>
           </md-content>
-          <md-content layout="row" layout-align="center">
-            <md-content flex-offset="20" flex="30"><md-button class="md-primary md-mini" ng-click="goToContent('container')">Back to top</md-button></md-content>
+          <md-content layout="row" layout-align="center center">
+            <md-button class="md-primary md-mini" ng-click="goToContent('container')">Back to top</md-button>
           </md-content>
         </md-content>
 
@@ -127,8 +140,8 @@
           </md-toolbar>
 
           <md-content>
-            <md-list layout="row" layout-wrap>
-              <md-list-item class="md-3-line" ng-repeat="app in apps" ng-click="openGooglePlayStoreTab(app.viewUrl)" flex="50">
+            <md-list layout="row" layout-xs="column" layout-wrap>
+              <md-list-item class="md-3-line" ng-repeat="app in apps" ng-click="openGooglePlayStoreTab(app.viewUrl)">
                 <img ng-src="{{app.icon}}" class="app-icon">
                 <div class="md-list-item-text">
                   <h3>{{app.name}}</h3>
@@ -138,8 +151,8 @@
               </md-list-item>
             </md-list>
           </md-content>
-          <md-content layout="row" layout-align="center">
-            <md-content flex-offset="20" flex="30"><md-button class="md-primary md-mini" ng-click="goToContent('container')">Back to top</md-button></md-content>
+          <md-content layout="row" layout-align="center center">
+            <md-button class="md-primary md-mini" ng-click="goToContent('container')">Back to top</md-button>
           </md-content>
         </md-content>
 
@@ -154,6 +167,9 @@
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/ngSmoothScroll/lib/angular-smooth-scroll.js"></script>
   <!-- endbower -->
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.6.0/angular-material-icons.min.js"></script> 
+
   <script src="js/main.js"></script>
   <script src="js/services/github.js"></script>
   <script src="js/services/googlePlayStore.js"></script>
