@@ -115,7 +115,7 @@
 
           <md-content>
             <md-list layout="row" layout-xs="column" layout-wrap>
-              <md-list-item class="md-3-line" ng-repeat="repo in repos" ng-click="openGithubRepoTab(repo.html_url)">
+              <md-list-item class="md-3-line" ng-repeat="repo in repos" ng-click="openGithubRepoTab(repo.html_url)" flex="50" flex-gt-md="25" flex-xs="100">
                 <img ng-src="images/github_icon.png" class="app-icon"> 
                 <div class="md-list-item-text">
                   <h3>{{repo.name}}</h3>
@@ -141,7 +141,7 @@
 
           <md-content>
             <md-list layout="row" layout-xs="column" layout-wrap>
-              <md-list-item class="md-3-line" ng-repeat="app in apps" ng-click="openGooglePlayStoreTab(app.viewUrl)">
+              <md-list-item class="md-3-line" ng-repeat="app in apps" ng-click="openGooglePlayStoreTab(app.viewUrl)" flex="50" flex-gt-md="25" flex-xs="100">
                 <img ng-src="{{app.icon}}" class="app-icon">
                 <div class="md-list-item-text">
                   <h3>{{app.name}}</h3>
