@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui"/>
-  <link rel="shortcut icon" href="images/person.png" type="image/png">
+  <link rel="shortcut icon" href="images/profile.png" type="image/png">
   <title>Donal Hurley</title>
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
@@ -12,17 +12,12 @@
 </head>
 
 <body>
-  <md-content id="container" ng-controller="contentController" md-swipe-right="openSidnav()" md-swipe-left="closeSidnav()">
+  <md-content id="container" ng-controller="contentController" md-swipe-right="openSidnav()" md-swipe-left="closeSidnav()" ng-cloak>
 
-<!---------------------------------------------------Top toolbar and image banner-------------------------------------------------------------->
-
-    <md-toolbar>
-      <div class="md-toolbar-tools">
-      </div>
-    </md-toolbar>
+<!---------------------------------------------------------Image banner------------------------------------------------------------------------>
 
     <md-content>
-      <img ng-src="images/code-banner.png" class="banner">
+      <img ng-src="images/code_banner.png" class="banner">
     </md-content>
 
 <!-------------------------------------------------------Contents toolbar---------------------------------------------------------------------->
@@ -38,7 +33,7 @@
 
 <!--------------------------------------------------------Contents sidenav---------------------------------------------------------------------->
 
-    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-closed="$mdMedia('gt-xs')">
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
       <md-toolbar class="md-theme-indigo">
         <h1 class="md-toolbar-tools">Contents</h1>
       </md-toolbar>
@@ -57,7 +52,7 @@
 
 <!----------------------------------------------------------About Content------------------------------------------------------------------------>
 
-        <md-content id="about-content" class="md-padding" ng-cloak>
+        <md-content id="about-content" class="md-padding">
           <md-toolbar>
             <h2 class="md-toolbar-tools" layout-align="center">
               <span>About</span>
@@ -67,7 +62,7 @@
           <md-content layout="column" layout-align="center center">
             <md-content flex-offset="10" layout="row" layout-align="center center" layout-wrap>
               <md-content flex="15" flex-xs="20">
-                <img ng-src="images/person.png" class="profile-icon">
+                <img ng-src="images/profile.png" class="profile-icon">
               </md-content>
               <md-content flex="25" flex-lg="30" flex-md="35" flex-sm="60" flex-xs="80">
                 <p>Name: <i>Donal Hurley</i></p> 
@@ -83,7 +78,7 @@
               <md-button class="md-primary" ng-href="https://ie.linkedin.com/in/donal-hurley-0b42a1b3" target="_blank">Linkedin</md-button>
             </md-content>
             <md-content >
-              <md-divider flex-offset="10" flex="80"></md-divider>
+              <md-divider flex-offset="5" flex="90"></md-divider>
               <p flex-offset="10" flex="80">
                 I am an experienced software engineer who is always looking to expand his technical knowledge. I am a Java developer by trade but I also have experience with Javascript, Python and Bash. I am always looking to try and learn the latest technologies used in the software industry from using the Unity 3D Game Engine to develop android applications to using AngularJS and Angular Material to create responsive web applications.
               </p>
@@ -96,7 +91,7 @@
 
 <!--------------------------------------------------------History Content---------------------------------------------------------------------->
 
-        <md-content id="history-content" ng-controller="historyController" class="md-padding" ng-cloak>
+        <md-content id="history-content" ng-controller="historyController" class="md-padding">
           <md-toolbar>
             <h2 class="md-toolbar-tools" layout-align="center">
               <span>History</span>
@@ -110,7 +105,7 @@
             <md-content layout="row" layout-align="center">
               <p flex="80" layout-align="center center">{{stage.description}}</p>
             </md-content>
-            <md-divider md-inset ng-if="!$last" flex="85"></md-divider>
+            <md-divider flex-offset="5" flex="90" ng-if="!$last"></md-divider>
           </md-content>
           <md-content layout="row" layout-align="center center">
             <md-button class="md-primary md-mini" ng-click="goToContent('container')">Back to top</md-button>
@@ -119,7 +114,7 @@
 
 <!-----------------------------------------------------GitHub Projects Content------------------------------------------------------------------>
 
-        <md-content id="github-projects-content" ng-controller="repoController" class="md-padding" ng-cloak>
+        <md-content id="github-projects-content" ng-controller="repoController" class="md-padding">
           <md-toolbar>
             <h2 class="md-toolbar-tools" layout-align="center">
               <span>GitHub Projects</span>
@@ -145,7 +140,7 @@
 
 <!-------------------------------------------------Android Applications Content---------------------------------------------------------------->
 
-        <md-content id="android-applications-content" ng-controller="appController" class="md-padding" ng-cloak>
+        <md-content id="android-applications-content" ng-controller="appController" class="md-padding">
           <md-toolbar>
             <h2 class="md-toolbar-tools" layout-align="center">
               <span>Android Applications</span>

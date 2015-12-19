@@ -1,4 +1,4 @@
-var contentController = function($scope, smoothScroll, $timeout, $mdSidenav) {
+var contentController = function($scope, smoothScroll, $timeout, $mdSidenav, $mdMedia) {
 	$scope.goToContent = function(id){
 		var element = document.getElementById(id);
       	smoothScroll(element);
@@ -10,11 +10,15 @@ var contentController = function($scope, smoothScroll, $timeout, $mdSidenav) {
 	}; 
 
 	$scope.closeSidnav = function () {
-      	$mdSidenav('left').close();
+		if($mdMedia('xs')){
+      		$mdSidenav('left').close();
+      	}
     };
 
     $scope.openSidnav = function () {
-      	$mdSidenav('left').open();
+    	if($mdMedia('xs')){
+      		$mdSidenav('left').open();
+      	}
     }
 };
 
