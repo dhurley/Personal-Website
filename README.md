@@ -22,4 +22,6 @@ Steps to setup development environment:
 
 To run locally:
 1. Run the command ***node server.js***
+
 2. Go to **http://localhost:8080/**
+
