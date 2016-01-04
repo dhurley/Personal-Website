@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui"/>
-  <link rel="shortcut icon" href="images/profile.png" type="image/png">
+  <link rel="shortcut icon" href="images/icon.png" type="image/png">
   <title>Donal Hurley</title>
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
@@ -22,12 +22,14 @@
 
 <!-------------------------------------------------------Contents toolbar---------------------------------------------------------------------->
 
-    <md-toolbar hide-xs>
+    <md-toolbar hide-xs hide-sm>
       <div class="md-toolbar-tools" layout="row" layout-align-gt-xs="center center">
-        <div flex="25" layout="column" layout-align="center center"><md-button ng-click="goToContent('about-content')">About</md-button></div>
-        <div flex="25" layout="column" layout-align="center center"><md-button ng-click="goToContent('history-content')">History</md-button></div>
-        <div flex="25" layout="column" layout-align="center center"><md-button ng-click="goToContent('github-projects-content')">GitHub Projects</md-button></div>
-        <div flex="25" layout="column" layout-align="center center"><md-button ng-click="goToContent('android-applications-content')">Android Applications</md-button></div>
+        <div flex="15" layout="column" layout-align="center center"><md-button ng-click="goToContent('about-content')">About</md-button></div>
+        <div flex="15" layout="column" layout-align="center center"><md-button ng-click="goToContent('work-experience-content')">Work Experience</md-button></div>
+        <div flex="15" layout="column" layout-align="center center"><md-button ng-click="goToContentAndCloseSidnav('education-content')">Education</md-button></div>
+        <div flex="15" layout="column" layout-align="center center"><md-button ng-click="goToContentAndCloseSidnav('skills-content')">Skills</md-button></div>
+        <div flex="15" layout="column" layout-align="center center"><md-button ng-click="goToContent('github-projects-content')">GitHub Projects</md-button></div>
+        <div flex="15" layout="column" layout-align="center center"><md-button ng-click="goToContent('android-applications-content')">Android Applications</md-button></div>
       </div>
     </md-toolbar>
 
@@ -39,7 +41,9 @@
       </md-toolbar>
       <md-content layout="column" layout-padding>
         <md-button ng-click="goToContentAndCloseSidnav('about-content')">About</md-button>
-        <md-button ng-click="goToContentAndCloseSidnav('history-content')">History</md-button>
+        <md-button ng-click="goToContentAndCloseSidnav('work-experience-content')">Work Experience</md-button>
+        <md-button ng-click="goToContentAndCloseSidnav('education-content')">Education</md-button>
+        <md-button ng-click="goToContentAndCloseSidnav('skills-content')">Skills</md-button>
         <md-button ng-click="goToContentAndCloseSidnav('github-projects-content')">GitHub Projects</md-button>
         <md-button ng-click="goToContentAndCloseSidnav('android-applications-content')">Android Applications</md-button>
       </md-content>
@@ -59,51 +63,31 @@
             </h2>
           </md-toolbar>
 
-          <md-content layout="column" layout-align="center center">
-            <md-content flex-offset="10" layout="row" layout-align="center center" layout-wrap>
-              <md-content flex="15" flex-xs="20">
-                <img ng-src="images/profile.png" class="profile-icon">
-              </md-content>
-              <md-content flex="25" flex-lg="30" flex-md="35" flex-sm="60" flex-xs="80">
-                <p>Name: <i>Donal Hurley</i></p> 
-                <p>Email: <i>djhurley1990@gmail.com</i></p>
-              </md-content>
-              <md-content hide-xs layout="column" flex="15" flex-sm="25">
-                <md-button class="md-primary" ng-href="https://github.com/dhurley" target="_blank">GitHub</md-button>
-                <md-button class="md-primary" ng-href="https://ie.linkedin.com/in/donal-hurley-0b42a1b3" target="_blank">Linkedin</md-button>
-              </md-content>
-            </md-content>
-            <md-content hide-gt-xs flex-offset="25" flex="80">
-              <md-button class="md-primary" ng-href="https://github.com/dhurley" target="_blank">GitHub</md-button>
-              <md-button class="md-primary" ng-href="https://ie.linkedin.com/in/donal-hurley-0b42a1b3" target="_blank">Linkedin</md-button>
-            </md-content>
-            <md-content >
-              <md-divider flex-offset="5" flex="90"></md-divider>
-              <p flex-offset="10" flex="80">
-                I am an experienced software engineer who is always looking to expand his technical knowledge. I am a Java developer by trade but I also have experience with Javascript, Python and Bash. I am always looking to try and learn the latest technologies used in the software industry from using the Unity 3D Game Engine to develop android applications to using AngularJS and Angular Material to create responsive web applications.
-              </p>
-            </md-content>
+          <md-content layout="row">
+            <p flex-offset="10" flex="80">
+              I am an experienced software engineer who is always looking to expand his technical knowledge. I am a Java developer by trade but I also have experience with Javascript, Python and Bash. I am always looking to try and learn the latest technologies used in the software industry from using the Unity 3D Game Engine to develop android applications to using AngularJS and Angular Material to create responsive web and mobile applications.
+            </p>
           </md-content>
           <md-content layout="row" layout-align="center center">
             <md-button class="md-primary md-mini" ng-click="goToContent('container')">Back to top</md-button>
           </md-content>
         </md-content>
 
-<!--------------------------------------------------------History Content---------------------------------------------------------------------->
+<!--------------------------------------------------------Work Experience Content---------------------------------------------------------------------->
 
-        <md-content id="history-content" ng-controller="historyController" class="md-padding">
+        <md-content id="work-experience-content" ng-controller="workExperienceController" class="md-padding">
           <md-toolbar>
             <h2 class="md-toolbar-tools" layout-align="center">
-              <span>History</span>
+              <span>Work Experience</span>
             </h2>
           </md-toolbar>
 
-          <md-content ng-repeat="stage in stages">
+          <md-content ng-repeat="job in jobs">
             <md-content layout="row" layout-align="center">
-              <md-subheader class="md-primary" layout-align="center center">{{stage.name}}</md-subheader>
+              <md-subheader class="md-primary" layout-align="center center">{{job.name}}</md-subheader>
             </md-content>
             <md-content layout="row" layout-align="center">
-              <p flex="80" layout-align="center center">{{stage.description}}</p>
+              <p flex="80" layout-align="center center">{{job.description}}</p>
             </md-content>
             <md-divider flex-offset="5" flex="90" ng-if="!$last"></md-divider>
           </md-content>
@@ -111,6 +95,69 @@
             <md-button class="md-primary md-mini" ng-click="goToContent('container')">Back to top</md-button>
           </md-content>
         </md-content>
+
+<!--------------------------------------------------------Education Content---------------------------------------------------------------------->
+
+        <md-content id="education-content" ng-controller="educationController" class="md-padding">
+          <md-toolbar>
+            <h2 class="md-toolbar-tools" layout-align="center">
+              <span>Education</span>
+            </h2>
+          </md-toolbar>
+
+          <md-content layout="row" layout-align="center">
+            <md-subheader class="md-primary" layout-align="center center">Degrees</md-subheader>
+          </md-content>
+          <md-content flex-offset="10">
+            <md-list layout="column" layout-gt-md="row">
+              <md-list-item class="md-3-line" ng-repeat="college in colleges" flex="100" flex-gt-md="50">
+                <div class="md-list-item-text">
+                  <h3>{{college.degree}}</h3>
+                  <p>College: {{college.name}} - ({{college.timePeriod}})</p>
+                  <p>Grade: {{college.grade}}</p>
+                </div>
+              </md-list-item>
+            </md-list>
+          </md-content>
+
+          <md-divider flex-offset="5" flex="90"></md-divider>
+
+          <md-content layout="row" layout-align="center">
+            <md-subheader class="md-primary" layout-align="center center">Certificates</md-subheader>
+          </md-content>
+          <md-content flex-offset="10">
+            <md-list layout="column" layout-gt-md="row">
+              <md-list-item class="md-3-line" ng-repeat="certificate in certificates" flex="100" flex-gt-md="50">
+                <div class="md-list-item-text">
+                  <h3>{{certificate.name}}</h3>
+                  <p>Year: {{certificate.year}}</p>
+                </div>
+              </md-list-item>
+            </md-list>
+          </md-content>
+          <md-content layout="row" layout-align="center center">
+            <md-button class="md-primary md-mini" ng-click="goToContent('container')">Back to top</md-button>
+          </md-content>
+
+<!--------------------------------------------------------Skills Content---------------------------------------------------------------------->
+
+        <md-content id="skills-content" ng-controller="skillsController" class="md-padding">
+          <md-toolbar>
+            <h2 class="md-toolbar-tools" layout-align="center">
+              <span>Skills</span>
+            </h2>
+          </md-toolbar>
+
+          <md-content flex-offset="10" flex="80">
+            <md-chips  ng-model="skills" readonly="true">
+              <md-chip-template>
+                <strong>{{$chip}}</strong>
+              </md-chip-template>
+            </md-chips>
+          </md-content>
+          <md-content layout="row" layout-align="center center">
+            <md-button class="md-primary md-mini" ng-click="goToContent('container')">Back to top</md-button>
+          </md-content>
 
 <!-----------------------------------------------------GitHub Projects Content------------------------------------------------------------------>
 
@@ -124,7 +171,7 @@
           <md-content>
             <md-list layout="row" layout-xs="column" layout-wrap>
               <md-list-item class="md-3-line" ng-repeat="repo in repos" ng-click="openGithubRepoTab(repo.html_url)" flex="50" flex-gt-md="25" flex-xs="100">
-                <img ng-src="images/github_icon.png" class="app-icon"> 
+                <img ng-src="images/github_icon.png" class="app-icon">
                 <div class="md-list-item-text">
                   <h3>{{repo.name}}</h3>
                   <p>Watchers: {{repo.watchers}}</p>
@@ -167,7 +214,7 @@
   </md-content>
 
 <!-------------------------------------------------------Javascript Files-------------------------------------------------------------------->
-   
+
   <!-- bower:js -->
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>
@@ -178,13 +225,15 @@
   <script src="bower_components/ngSmoothScroll/lib/angular-smooth-scroll.js"></script>
   <!-- endbower -->
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.6.0/angular-material-icons.min.js"></script> 
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.6.0/angular-material-icons.min.js"></script>
 
   <script src="js/main.js"></script>
   <script src="js/services/github.js"></script>
   <script src="js/services/googlePlayStore.js"></script>
   <script src="js/controllers/contentController.js"></script>
-  <script src="js/controllers/historyController.js"></script>
+  <script src="js/controllers/workExperienceController.js"></script>
+  <script src="js/controllers/educationController.js"></script>
+  <script src="js/controllers/skillsController.js"></script>
   <script src="js/controllers/repoController.js"></script>
   <script src="js/controllers/appController.js"></script>
 </body>

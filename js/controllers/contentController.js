@@ -7,16 +7,16 @@ var contentController = function($scope, smoothScroll, $timeout, $mdSidenav, $md
 	$scope.goToContentAndCloseSidnav = function(id){
 		$scope.closeSidnav();
 		$scope.goToContent(id);
-	}; 
+	};
 
 	$scope.closeSidnav = function () {
-		if($mdMedia('xs')){
+		if($mdMedia('xs') || $mdMedia('sm')){
       		$mdSidenav('left').close();
       	}
     };
 
     $scope.openSidnav = function () {
-    	if($mdMedia('xs')){
+    	if($mdMedia('xs') || $mdMedia('sm')){
       		$mdSidenav('left').open();
       	}
     }
