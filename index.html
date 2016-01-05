@@ -108,13 +108,13 @@
           <md-content layout="row" layout-align="center">
             <md-subheader class="md-primary" layout-align="center center">Degrees</md-subheader>
           </md-content>
-          <md-content flex-offset="10">
+          <md-content>
             <md-list layout="column" layout-gt-md="row">
               <md-list-item class="md-3-line" ng-repeat="college in colleges" flex="100" flex-gt-md="50">
                 <div class="md-list-item-text">
-                  <h3>{{college.degree}}</h3>
-                  <p>College: {{college.name}} - ({{college.timePeriod}})</p>
-                  <p>Grade: {{college.grade}}</p>
+                  <center><h3>{{college.degree}}</h3></center>
+                  <center><p>College: {{college.name}} - ({{college.timePeriod}})</p></center>
+                  <center><p>Grade: {{college.grade}}</p></center>
                 </div>
               </md-list-item>
             </md-list>
@@ -125,12 +125,12 @@
           <md-content layout="row" layout-align="center">
             <md-subheader class="md-primary" layout-align="center center">Certificates</md-subheader>
           </md-content>
-          <md-content flex-offset="10">
+          <md-content>
             <md-list layout="column" layout-gt-md="row">
               <md-list-item class="md-3-line" ng-repeat="certificate in certificates" flex="100" flex-gt-md="50">
                 <div class="md-list-item-text">
-                  <h3>{{certificate.name}}</h3>
-                  <p>Year: {{certificate.year}}</p>
+                  <center><h3>{{certificate.name}}</h3></center>
+                  <center><p>Year: {{certificate.year}}</p></center>
                 </div>
               </md-list-item>
             </md-list>

@@ -16,7 +16,6 @@
     "grunt": "~0.4.5",
     "angular-material": "master",
     "angular-route": "~1.4.8",
-    "material-design-icons": "~2.1.1",
     "ngSmoothScroll": "~2.0.0"
   }
 }
